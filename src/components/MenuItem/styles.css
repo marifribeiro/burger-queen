@@ -1,0 +1,32 @@
+.menu-item {
+  padding: 10px;
+  margin: 5px;
+  background-color: #FFFEC7;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+}
+
+.text {
+  font-family: 'Dosis', sans-serif;
+  color: #36342A;
+  font-size: 1em;
+}
+
+.menu-name {
+  font-weight: bold;
+}
+
+.menu-price {
+  font-weight: bold;
+}
+
+/* Color Theme Swatches in Hex */
+.Primavera-1-hex { color: #ED4248; }
+.Primavera-2-hex { color: #FF8147; }
+.Primavera-3-hex { color: #7DB57D; }
+.Primavera-4-hex { color: #36342A; }
+.Primavera-5-hex { color: #FFFEC7; }

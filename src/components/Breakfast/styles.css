@@ -1,0 +1,12 @@
+.breakfast {
+  padding: 10px 10px 20px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 35px;
+  color: #7DB57D;
+  padding: 10px 0 0 10px;
+}

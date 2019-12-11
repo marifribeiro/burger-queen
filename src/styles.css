@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fafafa;
+    color: #333;
+}
+
+
+/* Color Theme Swatches in Hex */
+.Primavera-1-hex { color: #ED4248; }
+.Primavera-2-hex { color: #FF8147; }
+.Primavera-3-hex { color: #7DB57D; }
+.Primavera-4-hex { color: #36342A; }
+.Primavera-5-hex { color: #FFFEC7; }
