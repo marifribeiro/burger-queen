@@ -6,7 +6,7 @@ import MenuItem from '../MenuItem/index';
 function Breakfast() {
   return(
     <>
-     <h2 class="title">Breakfast Menu</h2>
+     <h2 class="breakfast-title">Café da manhã</h2>
       <div className="breakfast">
         <MenuItem name="Café americano" price="5" />
         <MenuItem name="Café com leite" price="7" />
