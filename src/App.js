@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css';
-import firebase from './firebase';
 
 import Breakfast from './components/Breakfast/index';
 import Lunch from './components/Lunch/index';
