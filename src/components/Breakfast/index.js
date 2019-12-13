@@ -28,8 +28,7 @@ function Breakfast() {
     <>
      <h2 class="breakfast-title">Café da manhã</h2>
       <div className="breakfast">
-      {items.map((item) => <MenuItem key={item.id} name={item.name} price={item.price} />)}
-      
+        {items.map((item) => <MenuItem key={item.id} name={item.name} price={item.price} />)}
       </div>
     </>
   )

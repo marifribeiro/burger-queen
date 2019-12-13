@@ -9,10 +9,10 @@
   box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
 }
 
-.text {
+.menu-text {
   font-family: 'Dosis', sans-serif;
   color: #36342A;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 .menu-name {
