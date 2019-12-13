@@ -7,18 +7,28 @@
 .lunch-subtitle {
   font-family: 'Dosis', sans-serif;
   color: #36342A;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
-  display: flex;
-  justify-content: left;
-  padding-left: 20px;
+  text-align: center;
+  margin: 10px 0 0 0;
 }
 
-.lunch-title {
+.lunch-title  {
   font-family: 'Patrick Hand', cursive;
   font-size: 1.5em;
   color: rgb(78, 76, 65);
   padding: 10px 0 10px 20px;
+  text-align: center;
+}
+
+.join {
+  display: flex;
+  justify-content: space-around;
+}
+
+.drinks {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /* Color Theme Swatches in Hex */

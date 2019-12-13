@@ -4,9 +4,10 @@
   justify-content: center;
 }
 
-.breakfast-title {
+.breakfast-title  {
   font-family: 'Patrick Hand', cursive;
   font-size: 1.5em;
   color: rgb(78, 76, 65);
   padding: 10px 0 10px 20px;
+  text-align: center;
 }
