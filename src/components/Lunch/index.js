@@ -29,17 +29,25 @@ function Lunch() {
     <h2 class="lunch-title">Almoço e jantar</h2>
     <div className="lunch">
       <div className="join">
-        <span className="lunch-subtitle">Hambúrgers</span>
-        <span className="lunch-subtitle">Acompanhamentos</span>
+        <div className="border">
+          <span className="lunch-subtitle">Acompanhamentos</span>
+          <span className="section">
+            {items.map((item) => item.type === "side" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
+          </span>
+        </div>
+        <div className="border">
+          <span className="lunch-subtitle">Hambúrgers</span>
+          <span className="section">
+            {items.map((item) => item.type === "burger" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
+          </span>
+        </div>
       </div>
-      <span className="section">
-        {items.map((item) => item.type === "burger" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
-        {items.map((item) => item.type === "side" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
-      </span>
-      <span className="lunch-subtitle drinks">Bebidas</span>
-      <span className="section drinks">
-        {items.map((item) => item.type === "drink" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
-      </span>
+      <div className="border">
+        <span className="lunch-subtitle">Bebidas</span>
+        <span className="section">
+          {items.map((item) => item.type === "drink" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
+        </span>
+      </div>
     </div>
     </>
   )
