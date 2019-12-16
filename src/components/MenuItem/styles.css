@@ -1,3 +1,9 @@
+.menu-text {
+  font-family: 'Dosis', sans-serif;
+  color: #36342A;
+  font-size: 1em;
+}
+
 .menu-item {
   padding: 10px;
   margin: 5px;
@@ -9,9 +15,20 @@
   box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
 }
 
-.menu-text {
+.selected-item {
+  padding: 10px;
+  margin: 5px;
+  background-color: #ff8147;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+}
+
+.selected-text {
   font-family: 'Dosis', sans-serif;
-  color: #36342A;
+  color: #fff;
   font-size: 1em;
 }
 

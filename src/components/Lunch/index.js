@@ -26,23 +26,23 @@ function Lunch() {
 
   return(
     <>
-    <h2 class="lunch-title">Almoço e jantar</h2>
+    <h2 className="lunch-title">Almoço e jantar</h2>
     <div className="lunch">
       <div className="join">
-        <div className="border">
+        <div className="lunch-border">
           <span className="lunch-subtitle">Acompanhamentos</span>
           <span className="section">
             {items.map((item) => item.type === "side" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
           </span>
         </div>
-        <div className="border">
+        <div className="lunch-border">
           <span className="lunch-subtitle">Hambúrgers</span>
           <span className="section">
             {items.map((item) => item.type === "burger" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
           </span>
         </div>
       </div>
-      <div className="border">
+      <div className="lunch-border">
         <span className="lunch-subtitle">Bebidas</span>
         <span className="section">
           {items.map((item) => item.type === "drink" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
