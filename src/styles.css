@@ -11,6 +11,14 @@ body {
     color: #333;
 }
 
+.text {
+    font-family: 'Dosis', sans-serif;
+    color: #36342A;
+    font-size: 1em;
+    text-align: left;
+    margin: 10px 20px;
+}
+
 
 /* Color Theme Swatches in Hex */
 .Primavera-1-hex { color: #ED4248; }
