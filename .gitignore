@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #sensitive
-../src/firebase.js
+./src/firebase.js
