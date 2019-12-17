@@ -21,12 +21,6 @@ function useItems() {
   return items;
 }
 
-function useSelect() {
-  const [click, setClick] = useState([])
-
-  
-}
-
 function Breakfast(props) {
   const items = useItems()
 
