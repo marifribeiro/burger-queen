@@ -12,7 +12,7 @@ function useItems() {
       const newItems = snap.docs.map((doc) => ({
         id: doc.id,
         ...doc.data()
-      }))
+      }));
 
       setItems(newItems);
     })
@@ -27,14 +27,14 @@ function useSelect() {
   
 }
 
-function Breakfast() {
+function Breakfast(props) {
   const items = useItems()
 
   return(
     <>
      <h2 className="breakfast-title">Café da manhã</h2>
       <div className="breakfast">
-        {items.map((item) => <MenuItem key={item.id} name={item.name} price={item.price} />)}
+        {items.map((item) => <MenuItem onClick={props.onClick} key={item.id} name={item.name} price={item.price} />)}
       </div>
     </>
   )

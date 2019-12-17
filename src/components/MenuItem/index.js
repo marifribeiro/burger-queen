@@ -1,31 +1,20 @@
 import React, { useState, useEffect }from 'react';
 import './styles.css';
-import firebase from '../../firebase';
-
-
-
-function Counter() {
-  const num = 0
-  const [count, setCount] = useState(num);
-  return (
-    <>
-      Count: {count}
-      <button onClick={() => setCount(num)}>Reset</button>
-      <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
-      <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
-    </>
-  );
-}
 
 function MenuItem(props) {
-  const selected = 'selected-item';
-  const deselected = 'menu-item'
-  const [changeClass, setChangeClass] = useState(deselected);
+ 
+  const selectedClass = 'selected-item';
+  const deselectedClass = 'menu-item'
+  const [selected, setSelected] = useState(false);
+
+  function getItem() {
+    setSelected(!selected);
+    props.onClick({name: props.name, price: props.price})
+  }
 
   return(
     <>
-    
-    <button onClick={() => setChangeClass(selected)} className={changeClass}>
+    <button onClick={getItem} className={ selected ? selectedClass : deselectedClass }>
       <span className="menu-name menu-text">{props.name}</span>
       <span className="menu-price menu-text">R$ {props.price}</span>
     </button>

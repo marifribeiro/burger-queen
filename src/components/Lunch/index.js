@@ -12,7 +12,7 @@ function useItems() {
       const newItems = snap.docs.map((doc) => ({
         id: doc.id,
         ...doc.data()
-      }))
+      }));
 
       setItems(newItems);
     })
