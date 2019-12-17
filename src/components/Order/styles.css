@@ -1,0 +1,62 @@
+.order-item {
+    padding: 10px;
+    margin: 5px;
+    background-color: #FFFEC7;
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+}
+
+.order-title  {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2em;
+    color: rgb(78, 76, 65);
+    padding: 10px 0 10px 20px;
+    text-align: center;
+}
+
+.order-text {
+    font-family: 'Dosis', sans-serif;
+    color: #36342A;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.order-total {
+    margin: 5px;
+    padding: 5px;
+    color: #36342a;
+    font-size: 1.2em;
+    border-bottom: 1.5px solid #36342a;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    text-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+}
+
+.order-bottom {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.order-send {
+    padding: 5px;
+    margin: 5px;
+    background-color: #7DB57D;
+    color: #fff;
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+}
+
+.Primavera-1-hex { color: #ED4248; }
+.Primavera-6-hex { color: #ff8147; }
+.Primavera-2-hex { color: #ee9b63; }
+.Primavera-3-hex { color: #7DB57D; }
+.Primavera-4-hex { color: #36342A; }
+.Primavera-5-hex { color: #FFFEC7; }

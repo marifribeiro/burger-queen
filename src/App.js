@@ -4,7 +4,7 @@ import './styles.css';
 import Breakfast from './components/Breakfast/index';
 import Lunch from './components/Lunch/index';
 import Logo from './components/Logo/index';
-import Counter from './components/test';
+import Order from './components/Order';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
       <h4 className="text">Clique nos itens que gostaria de pedir!</h4>
       <Breakfast />
       <Lunch />
+      <Order />
     </div>
   );
 }

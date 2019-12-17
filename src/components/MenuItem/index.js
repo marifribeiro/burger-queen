@@ -24,11 +24,11 @@ function MenuItem(props) {
 
   return(
     <>
-    <Counter />
-    <div onClick={() => setChangeClass(selected)} className={changeClass}>
+    
+    <button onClick={() => setChangeClass(selected)} className={changeClass}>
       <span className="menu-name menu-text">{props.name}</span>
       <span className="menu-price menu-text">R$ {props.price}</span>
-    </div>
+    </button>
     </>
   )
 }
