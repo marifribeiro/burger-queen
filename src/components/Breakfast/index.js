@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
-import firebase from '../../firebase';
+import db from '../../utils/firebase';
 
 import MenuItem from '../MenuItem/index';
 
@@ -8,7 +8,7 @@ function useItems() {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    firebase.firestore().collection('breakfast').onSnapshot((snap) => {
+    db.collection('breakfast').onSnapshot((snap) => {
       const newItems = snap.docs.map((doc) => ({
         id: doc.id,
         ...doc.data()
