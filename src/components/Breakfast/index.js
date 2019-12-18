@@ -20,8 +20,6 @@ function useItems() {
 
   return items;
 }
-
-
 function Breakfast(props) {
   const items = useItems()
 
