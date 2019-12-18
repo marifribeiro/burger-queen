@@ -7,14 +7,14 @@ function MenuItem(props) {
   const deselectedClass = 'menu-item'
   const [selected, setSelected] = useState(false);
 
-  function getItem() {
+  function select() {
     setSelected(!selected);
-    props.onClick({name: props.name, price: props.price})
+    props.onClick()
   }
 
   return(
     <>
-    <button onClick={getItem} className={ selected ? selectedClass : deselectedClass }>
+    <button onClick={select} className={ selected ? selectedClass : deselectedClass }>
       <span className="menu-name menu-text">{props.name}</span>
       <span className="menu-price menu-text">R$ {props.price}</span>
     </button>

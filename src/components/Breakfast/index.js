@@ -21,20 +21,21 @@ function useItems() {
   return items;
 }
 
-function useSelect() {
-  const [click, setClick] = useState([])
-
-  
-}
 
 function Breakfast(props) {
   const items = useItems()
+
+  function getItems(item) {
+    props.onClick({name: item.name, price: item.price, id: item.id})
+  }
 
   return(
     <>
      <h2 className="breakfast-title">Café da manhã</h2>
       <div className="breakfast">
-        {items.map((item) => <MenuItem onClick={props.onClick} key={item.id} name={item.name} price={item.price} />)}
+        {
+          items.map((item) => <MenuItem onClick={() => getItems(item)} key={item.id} name={item.name} price={item.price} />)
+        }
       </div>
     </>
   )
