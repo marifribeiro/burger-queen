@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import Breakfast from '../components/Breakfast/index';
 import Lunch from '../components/Lunch/index';
-import Logo from '../components/Logo/index';
+import Logo from '../components/Navbar/index';
 import Order from '../components/Order';
 
 function Tables() {
