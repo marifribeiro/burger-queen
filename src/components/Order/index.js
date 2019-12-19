@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 
-import MenuItem from '../MenuItem/index';
+import OrderItem from '../OrderItem/index';
 
 function Order(props) {
   return (
@@ -11,7 +11,7 @@ function Order(props) {
         {
           props.item.map((item) => {
             return (
-              <MenuItem name={item.name} price={item.price} key={`order${item.id}`} onClick='' />
+              <OrderItem name={item.name} price={item.price} key={`order${item.id}`} onClick='' />
             )
           })
         }

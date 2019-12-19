@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-/*import './styles.css';*/
 
 import Breakfast from '../components/Breakfast/index';
 import Lunch from '../components/Lunch/index';
