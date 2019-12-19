@@ -4,6 +4,14 @@ import './styles.css';
 import OrderItem from '../OrderItem/index';
 
 function Order(props) {
+
+  const [order, setOrder] = useState([]);
+   
+  const sendOrder = (item) => {
+    const orders = [...order, {name: item.name, price: item.price, key: item.key, amount: item.amount}];
+    setOrder(orders)
+  }
+  
   return (
     <div>
       <h2 className="order-title">Pedido</h2>
@@ -11,7 +19,12 @@ function Order(props) {
         {
           props.item.map((item) => {
             return (
-              <OrderItem name={item.name} price={item.price} key={`order${item.id}`} onClick='' />
+              <OrderItem 
+                name={item.name} 
+                price={item.price} 
+                key={`order${item.id}`}
+                /*amount={item.amount}*/
+              />
             )
           })
         }

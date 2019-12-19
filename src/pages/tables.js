@@ -11,6 +11,7 @@ function Tables() {
 
   function selectItem(item) {
     setOrder([...order, item]);
+    console.log(order)
   }
   
   return (
@@ -18,7 +19,7 @@ function Tables() {
       <Logo />
       <h4 className="text">Clique nos itens que gostaria de pedir!</h4>
       <Breakfast onClick={selectItem} />
-      <Lunch />
+      <Lunch onClick={selectItem} />
       <Order item={order}/>
     </div>
   )

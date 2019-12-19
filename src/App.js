@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
-/*import Kitchen from './pages/kitchen';*/
+import Kitchen from './pages/kitchen';
 import Tables from './pages/tables';
 
 function App() {
@@ -14,11 +14,8 @@ function App() {
   return (
     <Router>
       <div>
-        
         <Switch>
-          <Route path="/cozinha">
-            <div>Em construção!</div>
-          </Route>
+          <Route path="/cozinha" component={Kitchen} />
           <Route path="/mesas" component={Tables} />
         </Switch>
       </div>

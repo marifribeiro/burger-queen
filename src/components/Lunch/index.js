@@ -21,8 +21,13 @@ function useItems() {
   return items;
 }
 
-function Lunch() {
+function Lunch(props) {
   const items = useItems()
+
+  function getItems(item) {
+    props.onClick({name: item.name, price: item.price, id: item.id})
+  }
+
 
   return(
     <>
@@ -32,20 +37,20 @@ function Lunch() {
         <div className="lunch-border">
           <span className="lunch-subtitle">Acompanhamentos</span>
           <span className="section">
-            {items.map((item) => item.type === "side" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
+            {items.map((item) => item.type === "side" ? <MenuItem onClick={() => getItems(item)} key={item.id} name={item.name} price={item.price} /> : false)}
           </span>
         </div>
         <div className="lunch-border">
           <span className="lunch-subtitle">Hambúrgers</span>
           <span className="section">
-            {items.map((item) => item.type === "burger" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
+            {items.map((item) => item.type === "burger" ? <MenuItem onClick={() => getItems(item)} key={item.id} name={item.name} price={item.price} /> : false)}
           </span>
         </div>
       </div>
       <div className="lunch-border">
         <span className="lunch-subtitle">Bebidas</span>
         <span className="section">
-          {items.map((item) => item.type === "drink" ? <MenuItem key={item.id} name={item.name} price={item.price} /> : false)}
+          {items.map((item) => item.type === "drink" ? <MenuItem onClick={() => getItems(item)} key={item.id} name={item.name} price={item.price} /> : false)}
         </span>
       </div>
     </div>
