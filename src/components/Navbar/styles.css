@@ -1,6 +1,58 @@
-.logo {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 40px;
-  color: #ED4248;
-  margin: 10px 0 10px 20px;
+.navbar {
+  padding: 10px 0;
+  width: 100%;
+  height: 55px;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: .5px solid #ED4248;
 }
+
+.nav-text a{
+  font-family: 'Dosis', sans-serif;
+  color: #ED4248;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: .1em;
+}
+
+.nav-text a:hover {
+  color: rgb(240, 196, 196);
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.list li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li a {
+  margin: 0 20px 0 20px;
+  text-decoration: none;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Patrick Hand', sans-serif;
+  font-weight: bolder;
+  font-size: 1.7em;
+  letter-spacing: .05em;
+  color: #ED4248;
+  align-items: center;
+  margin: 0 20px 0 20px;
+}
+
+/* Color Theme Swatches in Hex */
+.Primavera-1-hex { color: #ED4248; }
+.Primavera-6-hex { color: #ff8147; }
+.Primavera-2-hex { color: #ee9b63; }
+.Primavera-3-hex { color: #7DB57D; }
+.Primavera-4-hex { color: #36342A; }
+.Primavera-5-hex { color: #FFFEC7; }

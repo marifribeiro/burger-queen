@@ -8,15 +8,15 @@ import {
 
 function Navbar() {
   return (
-    <nav>
-      <ul>
-        <li>
+    <nav className="navbar">
+      <ul className="list">
+        <li className="list-item">
           <h1 className="logo">Burger Queen</h1>
         </li>
-        <li>
+        <li className="list-item nav-text">
           <Link to="/mesas">Mesas</Link>
         </li>
-        <li>
+        <li className="list-item nav-text">
           <Link to="/cozinha">Cozinha</Link>
         </li>
       </ul>
