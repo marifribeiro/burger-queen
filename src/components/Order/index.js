@@ -4,13 +4,6 @@ import './styles.css';
 import OrderItem from '../OrderItem/index';
 
 function Order(props) {
-
-  const [order, setOrder] = useState([]);
-   
-  const sendOrder = (item) => {
-    const orders = [...order, {name: item.name, price: item.price, key: item.key, amount: item.amount}];
-    setOrder(orders)
-  }
   
   return (
     <div>
@@ -23,7 +16,7 @@ function Order(props) {
                 name={item.name} 
                 price={item.price} 
                 key={`order${item.id}`}
-                /*amount={item.amount}*/
+                handleRemove={() => props.handleRemove(item.id)}
               />
             )
           })

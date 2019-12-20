@@ -25,7 +25,7 @@ function Breakfast(props) {
   const items = useItems()
 
   function getItems(item) {
-    props.onClick({name: item.name, price: item.price, id: item.id, amount: 0})
+    props.onClick({name: item.name, price: item.price, id: item.id})
   }
 
   return(

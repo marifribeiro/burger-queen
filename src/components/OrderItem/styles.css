@@ -1,7 +1,8 @@
 .order-text {
   font-family: 'Dosis', sans-serif;
   color: #36342A;
-  font-size: 1.3em;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .order-item {
@@ -47,9 +48,13 @@
   border-radius: 5px;
   border: none;
   box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
-  font-size: 1em;
 }
 
+.order-counter {
+  background-color: #FFFEC7;
+  text-align: center;
+  display: inline;
+}
 
 .order-bold {
   font-weight: bold;

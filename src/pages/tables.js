@@ -13,6 +13,14 @@ function Tables() {
     setOrder([...order, item]);
     console.log(order)
   }
+
+  function removeItem(item) {
+    const itemIndex = order.findIndex((orderItem) => orderItem.id === item)
+    console.log(itemIndex)
+    console.log(order)
+    order.splice(itemIndex, 1)
+    setOrder([...order])
+  }
   
   return (
     <div className="tables">
@@ -20,7 +28,7 @@ function Tables() {
       <h4 className="text">Clique nos itens que gostaria de pedir!</h4>
       <Breakfast onClick={selectItem} />
       <Lunch onClick={selectItem} />
-      <Order item={order}/>
+      <Order item={order} handleRemove={removeItem}/>
     </div>
   )
 }
