@@ -1,7 +1,7 @@
 .order-text {
   font-family: 'Dosis', sans-serif;
   color: #36342A;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
 }
 
@@ -10,11 +10,20 @@
   margin: 5px 2.5px;
   background-color: #FFFEC7;
   width: 100%;
+  min-width: 130px;
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
   border: none;
   box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+}
+
+.item-container {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  margin: 5px;
+  width: 99%;
 }
 
 .order-price {
@@ -23,17 +32,16 @@
 
 .order-add {
   background-image: url(../../img/add.png);
-  background-size: 18px;
+  background-size: 16px;
 }
 
 .order-minus {
   background-image: url(../../img/minus.png);
-  background-size: 18px;
+  background-size: 16px;
 }
 
 .order-remove {
   background-image: url(../../img/delete.png);
-  background-size: 29px;
 }
 
 .order-button {

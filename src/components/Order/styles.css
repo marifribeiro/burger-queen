@@ -1,79 +1,80 @@
 .order-container {
-    padding: 10px 10px 20px 10px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-    width: 99%;
-  }
+  display: flex;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 5px;
+  width: 99%;
+  max-width: 99%;
+  min-height: 50px;
+  max-height: 260px;
+}
 
 .order-item {
-    padding: 10px;
-    margin: 5px;
-    background-color: #FFFEC7;
-    width: 99%;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 5px;
-    box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+  padding: 10px;
+  margin: 5px;
+  background-color: #FFFEC7;
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
 }
 
 .order-title  {
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1.2em;
-    color: rgb(78, 76, 65);
-    padding: 10px 0 10px 20px;
-    text-align: center;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.2em;
+  color: rgb(78, 76, 65);
+  padding: 10px 0 0 0;
+  width: 99%;
+  text-align: center;
 }
 
 .order {
-    padding: 10px 10px 20px 10px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-    width: 99%;
-  }
+  display: flex;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  width: 99%;
+}
 
 .order-text {
-    font-family: 'Dosis', sans-serif;
-    color: #36342A;
-    font-size: 1.2em;
-    font-weight: bold;
+  font-family: 'Dosis', sans-serif;
+  color: #36342A;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .order-total {
-    margin: 5px;
-    padding: 5px;
-    color: #36342a;
-    font-size: 1.2em;
-    border-bottom: 1.5px solid #36342a;
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    text-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+  margin: 5px;
+  padding: 5px;
+  color: #36342a;
+  font-size: 1.2em;
+  border-bottom: 1.5px solid #36342a;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  text-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
 }
 
 .order-bottom {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .order-send {
-    padding: 5px;
-    margin: 5px;
-    background-color: #7DB57D;
-    color: #fff;
-    width: 40%;
-    display: flex;
-    justify-content: space-evenly;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+  padding: 5px;
+  margin: 5px;
+  background-color: #7DB57D;
+  color: #fff;
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
 }
 
 .Primavera-1-hex { color: #ED4248; }

@@ -37,7 +37,7 @@ function Breakfast(props) {
             onClick={() => getItems(item)} 
             key={item.id} 
             name={item.name} 
-            price={item.price} 
+            price={item.price}
             />)
         }
       </div>

@@ -10,12 +10,11 @@ function Tables() {
   const [order, setOrder] = useState([])
 
   function selectItem(item) {
-    if (order.filter(repeatedItem => repeatedItem.id === item.id).length == 0) {
+    if (order.filter(repeatedItem => repeatedItem.id === item.id).length === 0) {
       setOrder([...order, item]);
     } else {
-      removeItem(item)
+      removeItem(item.id)
     }
-    
   }
 
   function removeItem(item) {
@@ -29,7 +28,7 @@ function Tables() {
       <Navbar />
       <Breakfast onClick={selectItem} />
       <Lunch onClick={selectItem} />
-      <Order item={order} handleRemove={removeItem}/>
+      <Order item={order} handleRemove={removeItem} />
     </div>
   )
 }

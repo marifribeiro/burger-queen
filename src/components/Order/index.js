@@ -4,7 +4,7 @@ import './styles.css';
 import OrderItem from '../OrderItem/index';
 
 function Order(props) {
-  
+
   return (
     <div>
       <h2 className="order-title">Pedido</h2>
@@ -23,7 +23,7 @@ function Order(props) {
         }
       </div>
       <div className="order-bottom">
-        <span className="order-total order-text">Total: R${props.total}</span>
+        <span className="order-total order-text">Total: R${props.item.reduce((acc, curr) => acc + curr.price, 0) + ",00"}</span>
         <button className="order-send order-text" onClick={props.send}>Enviar pedido</button>
       </div>
     </div>
