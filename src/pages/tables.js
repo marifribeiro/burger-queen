@@ -10,25 +10,57 @@ function Tables() {
   const [order, setOrder] = useState([])
 
   function selectItem(item) {
-    if (order.filter(repeatedItem => repeatedItem.id === item.id).length === 0) {
-      setOrder([...order, item]);
+    if (order.filter(value => value.id === item.id).length === 0) {
+      setOrder([...order, {...item, amount: 1}]);
     } else {
-      removeItem(item.id)
+      removeItem(item)
     }
   }
 
   function removeItem(item) {
-    const itemIndex = order.findIndex((orderItem) => orderItem.id === item)
+    const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id)
     order.splice(itemIndex, 1)
     setOrder([...order])
   }
   
+  function addItem(item) {
+    const count = item.amount + 1;
+    const newItem = {...item, amount: count}
+    const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id)
+    order.splice(itemIndex, 1)
+    setOrder([...order, newItem]);
+    return count;
+  }
+
+  function minusItem(item) {
+    if (item.amount >= 2) {
+      const count = item.amount - 1;
+      const newItem = {...item, amount: count}
+      const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id)
+      order.splice(itemIndex, 1)
+      setOrder([...order, newItem]);
+      return count;
+    } else {
+      const count = 1;
+      const newItem = {...item, amount: count}
+      const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id)
+      order.splice(itemIndex, 1)
+      setOrder([...order, newItem]);
+      return count;
+    }
+  }
+
   return (
     <div className="tables">
       <Navbar />
       <Breakfast onClick={selectItem} />
       <Lunch onClick={selectItem} />
-      <Order item={order} handleRemove={removeItem} />
+      <Order 
+        item={order}
+        handleRemove={removeItem}
+        handleAdd={addItem}
+        handleMinus={minusItem}
+      />
     </div>
   )
 }

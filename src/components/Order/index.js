@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles.css';
 
 import OrderItem from '../OrderItem/index';
@@ -16,14 +16,17 @@ function Order(props) {
                 name={item.name} 
                 price={item.price} 
                 key={`order${item.id}`}
+                amount={item.amount}
                 handleRemove={() => props.handleRemove(item.id)}
+                handleAdd={() => props.handleAdd(item)}
+                handleMinus={() => props.handleMinus(item)}
               />
             )
           })
         }
       </div>
       <div className="order-bottom">
-        <span className="order-total order-text">Total: R${props.item.reduce((acc, curr) => acc + curr.price, 0) + ",00"}</span>
+        <span className="order-total order-text">Total: R${props.item.reduce((acc, curr) => acc + (curr.price * curr.amount), 0) + ",00"}</span>
         <button className="order-send order-text" onClick={props.send}>Enviar pedido</button>
       </div>
     </div>

@@ -25,7 +25,7 @@ function Lunch(props) {
   const items = useItems()
 
   function getItems(item) {
-    props.onClick({name: item.name, price: item.price, id: item.id})
+    props.onClick({name: item.name, price: item.price, id: item.id, amount: 1})
   }
 
   return(
