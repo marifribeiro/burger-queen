@@ -23,31 +23,16 @@ function Tables() {
     setOrder([...order])
   }
   
-  function addItem(item) {
-    const count = item.amount + 1;
-    const newItem = {...item, amount: count}
-    const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id)
-    order.splice(itemIndex, 1)
-    setOrder([...order, newItem]);
-    return count;
-  }
-
-  function minusItem(item) {
-    if (item.amount >= 2) {
-      const count = item.amount - 1;
-      const newItem = {...item, amount: count}
-      const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id)
-      order.splice(itemIndex, 1)
-      setOrder([...order, newItem]);
-      return count;
-    } else {
-      const count = 1;
-      const newItem = {...item, amount: count}
-      const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id)
-      order.splice(itemIndex, 1)
-      setOrder([...order, newItem]);
-      return count;
+  function changeAmount(item, operation) {
+    if (operation === 'add') {
+      var count = item.amount + 1;
+    } else if (operation === 'minus') {
+      var count = item.amount >= 2 ? item.amount - 1 : 1;
     }
+    const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id)
+    order.splice(itemIndex, 1, {...item, amount: count})
+    setOrder([...order]);
+    return count;
   }
 
   return (
@@ -58,8 +43,8 @@ function Tables() {
       <Order 
         item={order}
         handleRemove={removeItem}
-        handleAdd={addItem}
-        handleMinus={minusItem}
+        handleAdd={changeAmount}
+        handleMinus={changeAmount}
       />
     </div>
   )

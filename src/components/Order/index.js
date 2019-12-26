@@ -18,8 +18,8 @@ function Order(props) {
                 key={`order${item.id}`}
                 amount={item.amount}
                 handleRemove={() => props.handleRemove(item.id)}
-                handleAdd={() => props.handleAdd(item)}
-                handleMinus={() => props.handleMinus(item)}
+                handleAdd={() => props.handleAdd(item, 'add')}
+                handleMinus={() => props.handleMinus(item, 'minus')}
               />
             )
           })
