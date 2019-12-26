@@ -1,16 +1,19 @@
-.order-text {
-  font-family: 'Dosis', sans-serif;
-  color: #36342A;
-  font-size: 1em;
-  font-weight: bold;
+.item-container {
+  margin: 5px;
+  width: 99%;
+  height: auto;
+  flex-basis: 40%;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
 }
 
 .order-item {
   padding: 10px;
-  margin: 5px 2.5px;
+  margin: 3px 1.5px;
   background-color: #FFFEC7;
   width: 100%;
-  min-width: 130px;
+  min-width: 200px;
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
@@ -18,12 +21,25 @@
   box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
 }
 
-.item-container {
+.order-button {
+  padding: 10px;
+  margin: 3px 1.5px;
+  background-color: #f0a878;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
   display: flex;
-  justify-content: center;
-  padding: 5px;
-  margin: 5px;
-  width: 99%;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+}
+
+.order-text {
+  font-family: 'Dosis', sans-serif;
+  color: #36342A;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 .order-price {
@@ -42,20 +58,6 @@
 
 .order-remove {
   background-image: url(../../img/delete.png);
-}
-
-.order-button {
-  padding: 10px;
-  margin: 5px 2.5px;
-  background-color: #f0a878;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 50px;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
 }
 
 .order-counter {

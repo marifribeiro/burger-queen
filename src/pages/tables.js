@@ -5,6 +5,8 @@ import Lunch from '../components/Lunch/index';
 import Navbar from '../components/Navbar/index';
 import Order from '../components/Order';
 
+import db from '../utils/firebase';
+
 function Tables() {
 
   const [order, setOrder] = useState([])
@@ -35,6 +37,15 @@ function Tables() {
     return count;
   }
 
+  function sendOrder(order) {
+    db.collection("orders").add({
+      timestamp: new Date(),
+      table: 'table',
+      total: order.reduce((acc, curr) => acc + (curr.price * curr.amount), 0) + ",00",
+      order: order
+    })
+  }
+
   return (
     <div className="tables">
       <Navbar />
@@ -45,6 +56,7 @@ function Tables() {
         handleRemove={removeItem}
         handleAdd={changeAmount}
         handleMinus={changeAmount}
+        send={() => sendOrder(order)}
       />
     </div>
   )
