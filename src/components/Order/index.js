@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 
 import OrderItem from '../OrderItem/index';
-import Input from '../Input/index'
+import Form from '../Form/index'
 
 function Order(props) {
 
@@ -28,7 +28,10 @@ function Order(props) {
       </div>
       <div className="order-bottom">
         <span className="order-total order-text">Total: R${props.item.reduce((acc, curr) => acc + (curr.price * curr.amount), 0) + ",00"}</span>
-        <Input onChange={event => props.handleClient(event.target.value)} />
+        <Form 
+          onChangeTable={event => props.handleTable(event.target.value)}
+          onChangeName={event => props.handleName(event.target.value)}
+        />
         <button className="order-send order-text" onClick={props.send}>Enviar pedido</button>
       </div>
     </div>

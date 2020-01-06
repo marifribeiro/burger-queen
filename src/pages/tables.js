@@ -10,7 +10,8 @@ import db from '../utils/firebase';
 function Tables() {
 
   const [order, setOrder] = useState([])
-  const [client, setClient] = useState([])
+  const [table, setTable] = useState([])
+  const [name, setName] = useState([])
 
   function selectItem(item) {
     if (order.filter(value => value.id === item.id).length === 0) {
@@ -38,19 +39,25 @@ function Tables() {
     return count;
   }
 
-  function sendOrder(order, client) {
+  function sendOrder(order, name, table) {
     db.collection("orders").add({
       timestamp: new Date(),
       table: 'table',
       total: order.reduce((acc, curr) => acc + (curr.price * curr.amount), 0) + ",00",
       order: order,
-      table: client[1],
-      name: client[0]
+      table: table,
+      name: name
     })
   }
 
-  function getClient(client) {
-    setClient(client)
+  function getTable(table) {
+    setTable(table)
+    console.log(table)
+  }
+
+  function getName(name) {
+    setName(name)
+    console.log(name)
   }
 
   return (
@@ -63,8 +70,9 @@ function Tables() {
         handleRemove={removeItem}
         handleAdd={changeAmount}
         handleMinus={changeAmount}
-        handleClient={getClient}
-        send={() => sendOrder(order, client)}
+        handleTable={getTable}
+        handleName={getName}
+        send={() => sendOrder(order, name, table)}
       />
     </div>
   )
