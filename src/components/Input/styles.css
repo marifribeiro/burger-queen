@@ -1,0 +1,31 @@
+.form {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.input {
+  font-family: 'Dosis', sans-serif;
+  color: #36342A;
+  font-size: 1em;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 5px;
+  width: 100%;
+}
+
+.input-value {
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid #36342a;
+  padding-bottom: 5px;
+  height: 125%;
+}
+
+.label {
+  margin: 0 10px 0 0;
+}

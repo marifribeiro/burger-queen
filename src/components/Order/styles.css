@@ -38,9 +38,8 @@
   margin: 5px;
   padding: 5px;
   color: #36342a;
-  font-size: 1.2em;
   border-bottom: 1.5px solid #36342a;
-  width: 60%;
+  width: 17%;
   display: flex;
   justify-content: space-between;
   text-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
@@ -56,7 +55,7 @@
   margin: 5px;
   background-color: #7DB57D;
   color: #fff;
-  width: 40%;
+  width: 30%;
   display: flex;
   justify-content: space-evenly;
   border-radius: 5px;

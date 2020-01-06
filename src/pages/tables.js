@@ -4,6 +4,7 @@ import Breakfast from '../components/Breakfast/index';
 import Lunch from '../components/Lunch/index';
 import Navbar from '../components/Navbar/index';
 import Order from '../components/Order';
+import Input from '../components/Input';
 
 import db from '../utils/firebase';
 

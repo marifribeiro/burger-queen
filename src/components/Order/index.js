@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 
 import OrderItem from '../OrderItem/index';
+import Input from '../Input/index'
 
 function Order(props) {
 
@@ -27,6 +28,7 @@ function Order(props) {
       </div>
       <div className="order-bottom">
         <span className="order-total order-text">Total: R${props.item.reduce((acc, curr) => acc + (curr.price * curr.amount), 0) + ",00"}</span>
+        <Input />
         <button className="order-send order-text" onClick={props.send}>Enviar pedido</button>
       </div>
     </div>
