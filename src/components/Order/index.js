@@ -28,7 +28,7 @@ function Order(props) {
       </div>
       <div className="order-bottom">
         <span className="order-total order-text">Total: R${props.item.reduce((acc, curr) => acc + (curr.price * curr.amount), 0) + ",00"}</span>
-        <Input />
+        <Input onChange={event => props.handleClient(event.target.value)} />
         <button className="order-send order-text" onClick={props.send}>Enviar pedido</button>
       </div>
     </div>

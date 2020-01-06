@@ -4,13 +4,13 @@ import Breakfast from '../components/Breakfast/index';
 import Lunch from '../components/Lunch/index';
 import Navbar from '../components/Navbar/index';
 import Order from '../components/Order';
-import Input from '../components/Input';
 
 import db from '../utils/firebase';
 
 function Tables() {
 
   const [order, setOrder] = useState([])
+  const [client, setClient] = useState([])
 
   function selectItem(item) {
     if (order.filter(value => value.id === item.id).length === 0) {
@@ -38,13 +38,19 @@ function Tables() {
     return count;
   }
 
-  function sendOrder(order) {
+  function sendOrder(order, client) {
     db.collection("orders").add({
       timestamp: new Date(),
       table: 'table',
       total: order.reduce((acc, curr) => acc + (curr.price * curr.amount), 0) + ",00",
-      order: order
+      order: order,
+      table: client[1],
+      name: client[0]
     })
+  }
+
+  function getClient(client) {
+    setClient(client)
   }
 
   return (
@@ -57,7 +63,8 @@ function Tables() {
         handleRemove={removeItem}
         handleAdd={changeAmount}
         handleMinus={changeAmount}
-        send={() => sendOrder(order)}
+        handleClient={getClient}
+        send={() => sendOrder(order, client)}
       />
     </div>
   )
