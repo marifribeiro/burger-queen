@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-function OrderBurger(props) {
+function Burger(props) {
   return (
     <>
       <div className='item-container'>
@@ -18,4 +18,4 @@ function OrderBurger(props) {
   )
 }
 
-export default OrderBurger;
+export default Burger;

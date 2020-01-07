@@ -8,7 +8,7 @@ function useItems() {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    db.collection('lunch').onSnapshot((snap) => {
+    db.collection('menu').onSnapshot((snap) => {
       const newItems = snap.docs.map((doc) => ({
         id: doc.id,
         ...doc.data()
@@ -21,7 +21,7 @@ function useItems() {
   return items;
 }
 
-function Lunch(props) {
+function Menu(props) {
   const items = useItems()
 
   function getItems(item) {
@@ -34,24 +34,29 @@ function Lunch(props) {
 
   return(
     <>
-    <h2 className="lunch-title">Almoço e jantar</h2>
-    <div className="lunch">
+    <h2 className="menu-title">Café da manhã</h2>
+    <div className="menu-border section">
+    {items.map((item) => item.type === "breakfast" ? <MenuItem onClick={() => getItems(item)} key={item.id} name={item.name} price={item.price} /> : false)}
+    </div>
+
+    <h2 className="menu-title">Almoço e jantar</h2>
+    <div className="menu">
       <div className="join">
-        <div className="lunch-border">
-          <span className="lunch-subtitle">Hambúrgers</span>
+        <div className="menu-border">
+          <span className="menu-subtitle">Hambúrgers</span>
           <span className="section">
             {items.map((item) => item.type === "burger" ? <MenuItem onClick={() => getBurger(item)} key={item.id} name={item.name} price={item.price} /> : false)}
           </span>
         </div>
-        <div className="lunch-border">
-          <span className="lunch-subtitle">Acompanhamentos</span>
+        <div className="menu-border">
+          <span className="menu-subtitle">Acompanhamentos</span>
           <span className="section">
             {items.map((item) => item.type === "side" ? <MenuItem onClick={() => getItems(item)} key={item.id} name={item.name} price={item.price} /> : false)}
           </span>
         </div>
       </div>
-      <div className="lunch-border">
-        <span className="lunch-subtitle">Bebidas</span>
+      <div className="menu-border">
+        <span className="menu-subtitle">Bebidas</span>
         <span className="section">
           {items.map((item) => item.type === "drink" ? <MenuItem onClick={() => getItems(item)} key={item.id} name={item.name} price={item.price} /> : false)}
         </span>
@@ -61,4 +66,4 @@ function Lunch(props) {
   )
 }
 
-export default Lunch;
+export default Menu;

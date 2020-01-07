@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import Breakfast from '../components/Breakfast/index';
-import Lunch from '../components/Lunch/index';
+import Menu from '../components/Menu/index';
 import Navbar from '../components/Navbar/index';
 import Order from '../components/Order';
 
@@ -51,8 +50,7 @@ function Tables() {
   return (
     <div className="tables">
       <Navbar />
-      <Breakfast onClick={selectItem} />
-      <Lunch onClick={selectItem} />
+      <Menu onClick={selectItem} />
       <Order 
         item={order}
         handleRemove={removeItem}

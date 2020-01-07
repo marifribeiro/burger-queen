@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 
 import OrderItem from '../OrderItem/index';
-import OrderBurger from '../OrderBurger/index';
+import Burger from '../Burger/index';
 import Form from '../Form/index';
 
 function Order(props) {
@@ -27,7 +27,7 @@ function Order(props) {
             )
             } else {
               return (
-                <OrderBurger 
+                <Burger 
                   name={item.name} 
                   price={item.price} 
                   key={`order${item.id}`}
