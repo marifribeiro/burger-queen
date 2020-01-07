@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
-import firebase from '../../firebase';
+import db from '../../utils/firebase';
 
 import MenuItem from '../MenuItem/index';
 
@@ -8,11 +8,11 @@ function useItems() {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    firebase.firestore().collection('breakfast').onSnapshot((snap) => {
+    db.collection('breakfast').onSnapshot((snap) => {
       const newItems = snap.docs.map((doc) => ({
         id: doc.id,
         ...doc.data()
-      }))
+      }));
 
       setItems(newItems);
     })
@@ -21,14 +21,25 @@ function useItems() {
   return items;
 }
 
-function Breakfast() {
+function Breakfast(props) {
   const items = useItems()
+
+  function getItems(item) {
+    props.onClick({name: item.name, price: item.price, id: item.id})
+  }
 
   return(
     <>
-     <h2 class="breakfast-title">Café da manhã</h2>
+     <h2 className="breakfast-title">Café da manhã</h2>
       <div className="breakfast">
-        {items.map((item) => <MenuItem key={item.id} name={item.name} price={item.price} />)}
+        {
+          items.map((item) => <MenuItem 
+            onClick={() => getItems(item)} 
+            key={item.id} 
+            name={item.name} 
+            price={item.price}
+            />)
+        }
       </div>
     </>
   )

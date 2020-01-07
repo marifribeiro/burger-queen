@@ -1,18 +1,25 @@
 import React from 'react';
 import './styles.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
-import Breakfast from './components/Breakfast/index';
-import Lunch from './components/Lunch/index';
-import Logo from './components/Logo/index';
+import Kitchen from './pages/kitchen';
+import Tables from './pages/tables';
 
 function App() {
+
   return (
-    <div className="App">
-      <Logo />
-      <h4 className="text">Clique nos itens que gostaria de pedir!</h4>
-      <Breakfast />
-      <Lunch />
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/cozinha" component={Kitchen} />
+          <Route path="/mesas" component={Tables} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
