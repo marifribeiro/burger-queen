@@ -2,7 +2,8 @@ import React from 'react';
 import './styles.css';
 
 import OrderItem from '../OrderItem/index';
-import Form from '../Form/index'
+import OrderBurger from '../OrderBurger/index';
+import Form from '../Form/index';
 
 function Order(props) {
 
@@ -12,6 +13,7 @@ function Order(props) {
       <div className="order-container">
         {
           props.item.map((item) => {
+            if(item.type === 'regular') {
             return (
               <OrderItem 
                 name={item.name} 
@@ -23,6 +25,19 @@ function Order(props) {
                 handleMinus={() => props.handleMinus(item, 'minus')}
               />
             )
+            } else {
+              return (
+                <OrderBurger 
+                  name={item.name} 
+                  price={item.price} 
+                  key={`order${item.id}`}
+                  amount={item.amount}
+                  handleRemove={() => props.handleRemove(item.id)}
+                  handleAdd={() => props.handleAdd(item, 'add')}
+                  handleMinus={() => props.handleMinus(item, 'minus')}
+                />
+              )
+            }
           })
         }
       </div>

@@ -25,7 +25,11 @@ function Lunch(props) {
   const items = useItems()
 
   function getItems(item) {
-    props.onClick({name: item.name, price: item.price, id: item.id, amount: 1})
+    props.onClick({name: item.name, price: item.price, id: item.id, type: 'regular'})
+  }
+
+  function getBurger(item) {
+    props.onClick({type: 'burger', name: item.name, price: item.price, id: item.id, burger: item.burger, extras: item.extras})
   }
 
   return(
@@ -36,7 +40,7 @@ function Lunch(props) {
         <div className="lunch-border">
           <span className="lunch-subtitle">Hambúrgers</span>
           <span className="section">
-            {items.map((item) => item.type === "burger" ? <MenuItem onClick={() => getItems(item)} key={item.id} name={item.name} price={item.price} /> : false)}
+            {items.map((item) => item.type === "burger" ? <MenuItem onClick={() => getBurger(item)} key={item.id} name={item.name} price={item.price} /> : false)}
           </span>
         </div>
         <div className="lunch-border">

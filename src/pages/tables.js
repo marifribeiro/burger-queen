@@ -16,8 +16,6 @@ function Tables() {
   function selectItem(item) {
     if (order.filter(value => value.id === item.id).length === 0) {
       setOrder([...order, {...item, amount: 1}]);
-    } else {
-      removeItem(item)
     }
   }
 
@@ -50,16 +48,6 @@ function Tables() {
     })
   }
 
-  function getTable(table) {
-    setTable(table)
-    console.log(table)
-  }
-
-  function getName(name) {
-    setName(name)
-    console.log(name)
-  }
-
   return (
     <div className="tables">
       <Navbar />
@@ -70,8 +58,8 @@ function Tables() {
         handleRemove={removeItem}
         handleAdd={changeAmount}
         handleMinus={changeAmount}
-        handleTable={getTable}
-        handleName={getName}
+        handleTable={setTable}
+        handleName={setName}
         send={() => sendOrder(order, name, table)}
       />
     </div>
