@@ -1,0 +1,83 @@
+.item-container {
+  margin: 5px;
+  width: 99%;
+  height: auto;
+  flex-basis: 40%;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.order-item {
+  padding: 10px;
+  margin: 3px 1.5px;
+  background-color: #FFFEC7;
+  width: 100%;
+  min-width: 200px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+}
+
+.order-button {
+  padding: 10px;
+  margin: 3px 1.5px;
+  background-color: #f0a878;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+}
+
+.order-text {
+  font-family: 'Dosis', sans-serif;
+  color: #36342A;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.order-price {
+  padding: 0 10px;
+}
+
+.extras {
+  display: block;
+}
+
+.order-add {
+  background-image: url(../../img/add.png);
+  background-size: 16px;
+}
+
+.order-minus {
+  background-image: url(../../img/minus.png);
+  background-size: 16px;
+}
+
+.order-remove {
+  background-image: url(../../img/delete.png);
+}
+
+.order-counter {
+  background-color: #FFFEC7;
+  text-align: center;
+  display: inline;
+}
+
+.order-bold {
+  font-weight: bold;
+}
+
+/* Color Theme Swatches in Hex */
+.Primavera-1-hex { color: #ED4248; }
+.Primavera-6-hex { color: #ff8147; }
+.Primavera-2-hex { color: #ee9b63; }
+.Primavera-3-hex { color: #7DB57D; }
+.Primavera-4-hex { color: #36342A; }
+.Primavera-5-hex { color: #FFFEC7; }
