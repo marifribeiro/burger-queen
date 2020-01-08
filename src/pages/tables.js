@@ -36,6 +36,12 @@ function Tables() {
     return count;
   }
 
+  function getBurger(burger) {
+    const itemIndex = order.findIndex((orderItem) => orderItem.id === burger.id)
+    order.splice(itemIndex, 1, {...burger})
+    setOrder([...order]);
+  }
+
   function sendOrder(order, name, table) {
     db.collection("orders").add({
       timestamp: new Date(),
@@ -58,6 +64,8 @@ function Tables() {
         handleMinus={changeAmount}
         handleTable={setTable}
         handleName={setName}
+        handleBurger={getBurger}
+        handleExtra={getBurger}
         send={() => sendOrder(order, name, table)}
       />
     </div>

@@ -5,19 +5,18 @@ import Button from '../Button/index';
 
 function Burger(props) {
 
-  const [burger, setBurger] = useState('');
-  const [extra, setExtra] = useState('');
+  const [obj, setObj] = useState({name: props.name, price: props.price, amount: props.amount, type: 'burger', burger: 'Bovino default', extra: 'none'});
   const burgerTypes = ['Bovino', 'Frango', 'Veggie'];
   const extraTypes = ['+ Ovo', '+ Queijo'];
 
   function selectBurger(value) {
-    setBurger(value)
-    console.log(burger)
+    setObj({...obj, burger: value})
+    props.handleBurger({...obj, burger: value})
   }
 
   function selectExtra(value) {
-    setExtra(value)
-    console.log(extra)
+    setObj({...obj, extra: value})
+    props.handleExtra({...obj, extra: value})
   }
 
   return (
@@ -33,8 +32,8 @@ function Burger(props) {
         <button className='order-button order-remove order-text' onClick={props.handleRemove}></button>
       </div>
       <div className='item-container'>
-        { burgerTypes.map(type => <Button label={type} onClick={() => selectBurger(type)} />) }
-        { extraTypes.map(type => <Button label={type} onClick={() => selectExtra(type)} />) }
+        { burgerTypes.map((type) => <Button key={type} label={type} onClick={()   => selectBurger(type)} />) }
+        { extraTypes.map(type => <Button key={type} label={type} onClick={() => selectExtra(type)} />) }
       </div>
     </div>
   )

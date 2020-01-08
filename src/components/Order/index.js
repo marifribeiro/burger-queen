@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles.css';
 
 import OrderItem from '../OrderItem/index';
@@ -35,6 +35,8 @@ function Order(props) {
                   handleRemove={() => props.handleRemove(item)}
                   handleAdd={() => props.handleAdd(item, 'add')}
                   handleMinus={() => props.handleMinus(item, 'minus')}
+                  handleBurger={props.handleBurger}
+                  handleExtra={props.handleExtra}
                 />
               )
             }
