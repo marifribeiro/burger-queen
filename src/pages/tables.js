@@ -38,8 +38,10 @@ function Tables() {
 
   function getBurger(burger) {
     const itemIndex = order.findIndex((orderItem) => orderItem.id === burger.id)
-    order.splice(itemIndex, 1, {...burger})
-    setOrder([...order]);
+    console.log(burger, itemIndex)
+    const newOrder = order.map((item, index) => index === itemIndex ? burger : item);
+    console.log(newOrder)
+    setOrder(newOrder);
   }
 
   function sendOrder(order, name, table) {

@@ -30,6 +30,7 @@ function Order(props) {
                 <Burger 
                   name={item.name} 
                   price={item.price} 
+                  id={item.id}
                   key={`order${item.id}`}
                   amount={item.amount}
                   handleRemove={() => props.handleRemove(item)}
