@@ -3,8 +3,8 @@ import './styles.css';
 
 function Button(props) {
 
-  const selectedClass = 'order-button order-text selected';
-  const deselectedClass = 'order-button order-text burger';
+  const selectedClass = 'extra-button order-text burger selected';
+  const deselectedClass = 'extra-button order-text burger';
 
    return (
     <button onClick={props.onClick} className={props.selected ? selectedClass : deselectedClass}>{props.label}</button>

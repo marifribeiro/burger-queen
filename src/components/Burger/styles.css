@@ -1,6 +1,17 @@
+.extra-button {
+  padding: 5px;
+  height: 28px;
+  margin: 1.5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+  text-align: center;
+}
+
 .burger {
   background-color: #FFFEC7;
   width: 100%;
+  font-size: .9em;
 }
 
 .burger-container {
@@ -11,5 +22,4 @@
 
 .selected {
   background-color: #f0a878;
-  width: 100%;
 }

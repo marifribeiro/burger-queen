@@ -13,7 +13,11 @@ function Tables() {
   const [name, setName] = useState([])
 
   function selectItem(item) {
-    if (order.filter(value => value.id === item.id).length === 0) {
+    if (item.type === 'regular' && order.filter(value => value.id === item.id).length === 0) {
+      setOrder([...order, {...item, amount: 1}]);
+    } else if (item.type === 'regular' && order.filter(value => value.id === item.id).length >= 1) {
+      changeAmount(item, 'add')
+    } else if (item.type === 'burger') {
       setOrder([...order, {...item, amount: 1}]);
     }
   }
@@ -27,6 +31,7 @@ function Tables() {
   function changeAmount(item, operation) {
     if (operation === 'add') {
       var count = item.amount + 1;
+      console.log(item)
     } else if (operation === 'minus') {
       var count = item.amount >= 2 ? item.amount - 1 : 1;
     }
@@ -36,11 +41,9 @@ function Tables() {
     return count;
   }
 
-  function getBurger(burger) {
-    const itemIndex = order.findIndex((orderItem) => orderItem.id === burger.id)
-    console.log(burger, itemIndex)
-    const newOrder = order.map((item, index) => index === itemIndex ? burger : item);
-    console.log(newOrder)
+  function getOptions(option) {
+    const itemIndex = order.findIndex((orderItem) => orderItem.id === option.id);
+    const newOrder = order.map((item, index) => index === itemIndex ? option : item);
     setOrder(newOrder);
   }
 
@@ -66,8 +69,8 @@ function Tables() {
         handleMinus={changeAmount}
         handleTable={setTable}
         handleName={setName}
-        handleBurger={getBurger}
-        handleExtra={getBurger}
+        handleBurger={getOptions}
+        handleExtra={getOptions}
         send={() => sendOrder(order, name, table)}
       />
     </div>

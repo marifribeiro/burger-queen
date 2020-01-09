@@ -36,7 +36,7 @@ function Menu(props) {
     <>
     <h2 className="menu-title">Café da manhã</h2>
     <div className="menu-border section">
-    {items.map((item) => item.type === "breakfast" ? <MenuItem onClick={() => getItems(item)} key={item.id} name={item.name} price={item.price} /> : false)}
+    {items.map((item) => item.type === "breakfast" ? <MenuItem onClick={() => getItems(item)} key={item.id} {...item} /> : false)}
     </div>
 
     <h2 className="menu-title">Almoço e jantar</h2>
@@ -45,20 +45,20 @@ function Menu(props) {
         <div className="menu-border">
           <span className="menu-subtitle">Hambúrgers</span>
           <span className="section">
-            {items.map((item) => item.type === "burger" ? <MenuItem onClick={() => getBurger(item)} key={item.id} name={item.name} price={item.price} /> : false)}
+            {items.map((item) => item.type === "burger" ? <MenuItem onClick={() => getBurger(item)} key={item.id} {...item} /> : false)}
           </span>
         </div>
         <div className="menu-border">
           <span className="menu-subtitle">Acompanhamentos</span>
           <span className="section">
-            {items.map((item) => item.type === "side" ? <MenuItem onClick={() => getItems(item)} key={item.id} name={item.name} price={item.price} /> : false)}
+            {items.map((item) => item.type === "side" ? <MenuItem onClick={() => getItems(item)} key={item.id} {...item} /> : false)}
           </span>
         </div>
       </div>
       <div className="menu-border">
         <span className="menu-subtitle">Bebidas</span>
         <span className="section">
-          {items.map((item) => item.type === "drink" ? <MenuItem onClick={() => getItems(item)} key={item.id} name={item.name} price={item.price} /> : false)}
+          {items.map((item) => item.type === "drink" ? <MenuItem onClick={() => getItems(item)} key={item.id} {...item} /> : false)}
         </span>
       </div>
     </div>

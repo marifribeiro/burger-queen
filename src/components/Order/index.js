@@ -12,14 +12,12 @@ function Order(props) {
       <h2 className="order-title">Pedido</h2>
       <div className="order-container">
         {
-          props.item.map((item) => {
+          props.item.map((item, index) => {
             if(item.type === 'regular') {
               return (
                 <OrderItem 
-                  name={item.name} 
-                  price={item.price} 
+                  {...item}
                   key={`order${item.id}`}
-                  amount={item.amount}
                   handleRemove={() => props.handleRemove(item)}
                   handleAdd={() => props.handleAdd(item, 'add')}
                   handleMinus={() => props.handleMinus(item, 'minus')}
@@ -28,11 +26,8 @@ function Order(props) {
             } else {
               return (
                 <Burger 
-                  name={item.name} 
-                  price={item.price} 
-                  id={item.id}
-                  key={`order${item.id}`}
-                  amount={item.amount}
+                  {...item}
+                  key={`burger${item.id, index}`}
                   handleRemove={() => props.handleRemove(item)}
                   handleAdd={() => props.handleAdd(item, 'add')}
                   handleMinus={() => props.handleMinus(item, 'minus')}

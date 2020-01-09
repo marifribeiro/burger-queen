@@ -7,10 +7,8 @@ function Burger(props) {
 
   const [obj, setObj] = useState({id: props.id, name: props.name, price: props.price, amount: props.amount, type: 'burger', burger: 'Bovino', extra: 'Não'});
 
-
-
   const burgerTypes = ['Bovino', 'Frango', 'Veggie'];
-  const extraTypes = ['+ Ovo', '+ Queijo', 'Não'];
+  const extraTypes = ['Ovo', 'Queijo', 'Não'];
 
   function selectBurger(value) {
     setObj({...obj, burger: value})
@@ -18,8 +16,17 @@ function Burger(props) {
   }
 
   function selectExtra(value) {
-    setObj({...obj, extra: value})
-    props.handleExtra({...obj, extra: value})
+    if (value !== 'Não' && props.id === 'MxF3ITOa2v8vMkUIM5DE') {
+      var newPrice = 16;
+    } else if (value !== 'Não' && props.id === '0KVoxhQe8Whkn6ErATew') {
+      var newPrice = 11;
+    } else if (value === 'Não' && props.id === 'MxF3ITOa2v8vMkUIM5DE') {
+      var newPrice = 15;
+    } else if ((value === 'Não' && props.id === '0KVoxhQe8Whkn6ErATew')) {
+      var newPrice = 10;
+    }
+    setObj({...obj, extra: value, price: newPrice})
+    props.handleExtra({...obj, extra: value, price: newPrice})
   }
 
   return (
