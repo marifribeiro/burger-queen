@@ -4,7 +4,7 @@
   justify-content: center;
 }
 
-.lunch-title  {
+.menu-title  {
   font-family: 'Patrick Hand', cursive;
   font-size: 1.2em;
   color: rgb(78, 76, 65);
@@ -13,7 +13,7 @@
   text-align: center;
 }
 
-.lunch-subtitle {
+.menu-subtitle {
   font-family: 'Dosis', sans-serif;
   color: #36342A;
   font-size: 1em;
@@ -30,7 +30,7 @@
   width: 99.7%;
 }
 
-.lunch-border {
+.menu-border {
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 5px;

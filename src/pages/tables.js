@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import Breakfast from '../components/Breakfast/index';
-import Lunch from '../components/Lunch/index';
+import Menu from '../components/Menu/index';
 import Navbar from '../components/Navbar/index';
 import Order from '../components/Order';
 
@@ -14,7 +13,9 @@ function Tables() {
   const [name, setName] = useState([])
 
   function selectItem(item) {
-    if (order.filter(value => value.id === item.id).length === 0) {
+    if (item.type === 'regular' && order.filter(value => value.id === item.id).length === 0) {
+      setOrder([...order, {...item, amount: 1}]);
+    } else if (item.type === 'burger') {
       setOrder([...order, {...item, amount: 1}]);
     }
   }
@@ -28,6 +29,7 @@ function Tables() {
   function changeAmount(item, operation) {
     if (operation === 'add') {
       var count = item.amount + 1;
+      console.log(item)
     } else if (operation === 'minus') {
       var count = item.amount >= 2 ? item.amount - 1 : 1;
     }
@@ -35,6 +37,12 @@ function Tables() {
     order.splice(itemIndex, 1, {...item, amount: count})
     setOrder([...order]);
     return count;
+  }
+
+  function getOptions(option) {
+    const itemIndex = order.findIndex((orderItem) => orderItem.id === option.id);
+    const newOrder = order.map((item, index) => index === itemIndex ? option : item);
+    setOrder(newOrder);
   }
 
   function sendOrder(order, name, table) {
@@ -46,13 +54,15 @@ function Tables() {
       table: table,
       name: name
     })
+    setOrder([]);
+    setTable('');
+    setName('');
   }
 
   return (
     <div className="tables">
       <Navbar />
-      <Breakfast onClick={selectItem} />
-      <Lunch onClick={selectItem} />
+      <Menu onClick={selectItem} />
       <Order 
         item={order}
         handleRemove={removeItem}
@@ -60,6 +70,8 @@ function Tables() {
         handleMinus={changeAmount}
         handleTable={setTable}
         handleName={setName}
+        handleBurger={getOptions}
+        handleExtra={getOptions}
         send={() => sendOrder(order, name, table)}
       />
     </div>

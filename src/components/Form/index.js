@@ -8,7 +8,7 @@ function Form(props) {
     <Input 
       class='input table'
       id='table'
-      label='Mesas:'
+      label='Mesa:'
       type='number'
       onChange={props.onChangeTable}
     />

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles.css';
 
 import OrderItem from '../OrderItem/index';
-import OrderBurger from '../OrderBurger/index';
+import Burger from '../Burger/index';
 import Form from '../Form/index';
 
 function Order(props) {
@@ -12,29 +12,27 @@ function Order(props) {
       <h2 className="order-title">Pedido</h2>
       <div className="order-container">
         {
-          props.item.map((item) => {
+          props.item.map((item, index) => {
             if(item.type === 'regular') {
-            return (
-              <OrderItem 
-                name={item.name} 
-                price={item.price} 
-                key={`order${item.id}`}
-                amount={item.amount}
-                handleRemove={() => props.handleRemove(item.id)}
-                handleAdd={() => props.handleAdd(item, 'add')}
-                handleMinus={() => props.handleMinus(item, 'minus')}
-              />
-            )
-            } else {
               return (
-                <OrderBurger 
-                  name={item.name} 
-                  price={item.price} 
+                <OrderItem 
+                  {...item}
                   key={`order${item.id}`}
-                  amount={item.amount}
-                  handleRemove={() => props.handleRemove(item.id)}
+                  handleRemove={() => props.handleRemove(item)}
                   handleAdd={() => props.handleAdd(item, 'add')}
                   handleMinus={() => props.handleMinus(item, 'minus')}
+                />
+              )
+            } else {
+              return (
+                <Burger 
+                  {...item}
+                  key={`burger${item.id, index}`}
+                  handleRemove={() => props.handleRemove(item)}
+                  handleAdd={() => props.handleAdd(item, 'add')}
+                  handleMinus={() => props.handleMinus(item, 'minus')}
+                  handleBurger={props.handleBurger}
+                  handleExtra={props.handleExtra}
                 />
               )
             }
