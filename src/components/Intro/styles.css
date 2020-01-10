@@ -1,0 +1,56 @@
+.intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.intro-text {
+  display: block;
+  margin: 0 0 20px 0;
+  font-family: 'Dosis', sans-serif;
+  color: #36342A;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.intro-links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 350px;
+}
+
+.intro-links :hover {
+  cursor: pointer;
+  background-color: #ff8147;
+}
+
+.link {
+  background-color: #ED4248;
+  width: 100px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
+  padding: 15px;
+  box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+  box-sizing: border-box;
+}
+
+.link a {
+  color: #FFFEC7;
+  text-decoration: none;
+}
+
+/* Color Theme Swatches in Hex */
+.Primavera-1-hex { color: #ED4248; }
+.Primavera-6-hex { color: #ff8147; }
+.Primavera-2-hex { color: #ee9b63; }
+.Primavera-3-hex { color: #7DB57D; }
+.Primavera-4-hex { color: #36342A; }
+.Primavera-5-hex { color: #FFFEC7; }

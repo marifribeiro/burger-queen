@@ -15,8 +15,6 @@ function Tables() {
   function selectItem(item) {
     if (item.type === 'regular' && order.filter(value => value.id === item.id).length === 0) {
       setOrder([...order, {...item, amount: 1}]);
-    } else if (item.type === 'regular' && order.filter(value => value.id === item.id).length >= 1) {
-      changeAmount(item, 'add')
     } else if (item.type === 'burger') {
       setOrder([...order, {...item, amount: 1}]);
     }
@@ -56,6 +54,9 @@ function Tables() {
       table: table,
       name: name
     })
+    setOrder([]);
+    setTable('');
+    setName('');
   }
 
   return (

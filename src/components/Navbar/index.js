@@ -14,10 +14,13 @@ function Navbar() {
           <h1 className="logo">Burger Queen</h1>
         </li>
         <li className="list-item nav-text">
-          <Link to="/mesas">Mesas</Link>
+          <Link to="/mesas">Novo pedido</Link>
         </li>
         <li className="list-item nav-text">
           <Link to="/cozinha">Cozinha</Link>
+        </li>
+        <li className="list-item nav-text">
+          <Link to="/prontos">Pedidos prontos</Link>
         </li>
       </ul>
     </nav>

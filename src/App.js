@@ -8,6 +8,8 @@ import {
 
 import Kitchen from './pages/kitchen';
 import Tables from './pages/tables';
+import Ready from './pages/ready';
+import Home from './pages/home';
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
         <Switch>
           <Route path="/cozinha" component={Kitchen} />
           <Route path="/mesas" component={Tables} />
+          <Route path="/prontos" component={Ready} />
+          <Route path="/" component={Home} />
         </Switch>
       </div>
     </Router>
