@@ -5,7 +5,7 @@ function Input(props) {
  return (
   <span className={props.class}>
     <div id={props.id} className='label input-text'>{props.label}</div>
-    <input type={props.type} id={props.id} className='input-value input-text' onChange={props.onChange}></input>
+    <input type={props.type} id={props.id} className='input-value input-text' onChange={props.onChange} value={props.value}></input>
   </span>
  )
 }

@@ -10,6 +10,7 @@ function Form(props) {
       id='table'
       label='Mesa:'
       type='number'
+      value={props.tableValue}
       onChange={props.onChangeTable}
     />
     <Input 
@@ -17,6 +18,7 @@ function Form(props) {
       id='name'
       label='Nome:'
       type='text'
+      value={props.nameValue}
       onChange={props.onChangeName}
     />
   </form>

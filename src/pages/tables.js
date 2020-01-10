@@ -49,7 +49,10 @@ function Tables() {
     db.collection("orders").add({
       timestamp: new Date(),
       table: 'table',
-      total: order.reduce((acc, curr) => acc + (curr.price * curr.amount), 0) + ",00",
+      total: order.reduce((acc, curr) => {
+        const extraPrice = curr.extra === undefined || curr.extra === "Não" ? 0 : 1;
+        return acc + ((curr.price + extraPrice) * curr.amount)
+        }, 0) + ",00",
       order: order,
       table: table,
       name: name
@@ -65,6 +68,8 @@ function Tables() {
       <Menu onClick={selectItem} />
       <Order 
         item={order}
+        tableValue={table}
+        nameValue={name}
         handleRemove={removeItem}
         handleAdd={changeAmount}
         handleMinus={changeAmount}

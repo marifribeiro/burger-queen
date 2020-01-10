@@ -40,8 +40,13 @@ function Order(props) {
         }
       </div>
       <div className="order-bottom">
-        <span className="order-total order-text">Total: R${props.item.reduce((acc, curr) => acc + (curr.price * curr.amount), 0) + ",00"}</span>
+        <span className="order-total order-text">Total: R${props.item.reduce((acc, curr) => {
+          const extraPrice = curr.extra === undefined || curr.extra === "Não" ? 0 : 1;
+          return acc + ((curr.price + extraPrice) * curr.amount)
+          }, 0) + ",00"}</span>
         <Form 
+          tableValue={props.tableValue}
+          nameValue={props.nameValue}
           onChangeTable={event => props.handleTable(event.target.value)}
           onChangeName={event => props.handleName(event.target.value)}
         />

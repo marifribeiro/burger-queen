@@ -9,6 +9,7 @@ function Burger(props) {
 
   const burgerTypes = ['Bovino', 'Frango', 'Veggie'];
   const extraTypes = ['Ovo', 'Queijo', 'Não'];
+  const extraPrice = obj.extra && obj.extra === "Não" ? 0 : 1;
 
   function selectBurger(value) {
     setObj({...obj, burger: value})
@@ -16,17 +17,8 @@ function Burger(props) {
   }
 
   function selectExtra(value) {
-    if (value !== 'Não' && props.id === 'MxF3ITOa2v8vMkUIM5DE') {
-      var newPrice = 16;
-    } else if (value !== 'Não' && props.id === '0KVoxhQe8Whkn6ErATew') {
-      var newPrice = 11;
-    } else if (value === 'Não' && props.id === 'MxF3ITOa2v8vMkUIM5DE') {
-      var newPrice = 15;
-    } else if ((value === 'Não' && props.id === '0KVoxhQe8Whkn6ErATew')) {
-      var newPrice = 10;
-    }
-    setObj({...obj, extra: value, price: newPrice})
-    props.handleExtra({...obj, extra: value, price: newPrice})
+    setObj({...obj, extra: value})
+    props.handleExtra({...obj, extra: value})
   }
 
   return (
@@ -34,7 +26,7 @@ function Burger(props) {
       <div className='item-container'>
         <div className='order-item'>
           <span className="order-text">{props.name}</span>
-          <span className="order-text order-price">R$ {props.price}</span>
+          <span className="order-text order-price">R$ {props.price + extraPrice}</span>
         </div>
         <div className="order-button order-text order-counter">{props.amount}</div>
         <button className='order-button order-add order-text' onClick={props.handleAdd}></button>
