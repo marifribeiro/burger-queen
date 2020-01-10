@@ -1,0 +1,52 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: auto;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  flex-direction: column;
+  background-color: #FFFEC7;
+  box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
+}
+
+.card-text {
+  font-family: 'Dosis', sans-serif;
+  color: #36342A;
+  font-size: 1em;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-time {
+  font-size: 1.1em;
+}
+
+.table-info {
+  line-height: 1.5em;
+  display: block;
+}
+
+.kitchen-order {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 5px 0;
+  border-bottom: .5px solid #36342A;
+}
+
+.order-info {
+  font-size: .9em;
+}
+
+.kitchen-button {
+  display: flex;
+  justify-content: center;
+}
+
+.Primavera-1-hex { color: #ED4248; }
+.Primavera-2-hex { color: #FF8147; }
+.Primavera-3-hex { color: #7DB57D; }
+.Primavera-4-hex { color: #36342A; }
+.Primavera-5-hex { color: #FFFEC7; }

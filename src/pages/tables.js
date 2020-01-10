@@ -29,7 +29,6 @@ function Tables() {
   function changeAmount(item, operation) {
     if (operation === 'add') {
       var count = item.amount + 1;
-      console.log(item)
     } else if (operation === 'minus') {
       var count = item.amount >= 2 ? item.amount - 1 : 1;
     }
@@ -47,7 +46,7 @@ function Tables() {
 
   function sendOrder(order, name, table) {
     db.collection("orders").add({
-      timestamp: new Date(),
+      ordered: new Date().toLocaleString(),
       table: 'table',
       total: order.reduce((acc, curr) => {
         const extraPrice = curr.extra === undefined || curr.extra === "Não" ? 0 : 1;
@@ -55,7 +54,7 @@ function Tables() {
         }, 0) + ",00",
       order: order,
       table: table,
-      name: name
+      name: name,
     })
     setOrder([]);
     setTable('');
@@ -63,7 +62,7 @@ function Tables() {
   }
 
   return (
-    <div className="tables">
+    <>
       <Navbar />
       <Menu onClick={selectItem} />
       <Order 
@@ -79,7 +78,7 @@ function Tables() {
         handleExtra={getOptions}
         send={() => sendOrder(order, name, table)}
       />
-    </div>
+    </>
   )
 }
 
