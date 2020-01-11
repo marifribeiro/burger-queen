@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import db from '../utils/firebase';
+import db from '../../utils/firebase';
+import './styles.css';
 
-import Navbar from '../components/Navbar';
-import OrderCard from '../components/OrderCard';
+import Navbar from '../Navbar';
+import OrderCard from '../OrderCard';
 
 function useItems() {
   const [items, setItems] = useState([])
@@ -22,26 +23,20 @@ function useItems() {
 }
 
 
-function Ready() {
+function OrdersGrid(props) {
   const items = useItems()
-
-  function orderDelivered(id) {
-    db.collection("orders").doc(id).update({
-      delivered: new Date().toLocaleString(),
-    })
-  }
 
   return (
   <>
-    <Navbar readyActive={'active'} />
+    <Navbar />
     <div className='grid-container'>
       { items.map(item => (
         <OrderCard 
           {...item} 
           key={item.id} 
-          buttonLabel={'Entregue'} 
-          condition={!item.delivered && item.done} 
-          onClick={() => orderDelivered(item.id)} 
+          buttonLabel={props.buttonLabel} 
+          condition={props.condition} 
+          onClick={() => props.handleClick(item.id)} 
         />
       )) }
     </div>
@@ -49,4 +44,4 @@ function Ready() {
   )
 }
 
-export default Ready;
+export default OrdersGrid;

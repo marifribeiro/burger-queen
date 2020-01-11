@@ -1,7 +1,7 @@
 .card-container {
   display: flex;
   justify-content: center;
-  width: 200px;
+  width: 216px;
   height: auto;
   margin: 20px;
   padding: 10px;
@@ -29,7 +29,7 @@
   display: block;
 }
 
-.kitchen-order {
+.order-items {
   display: flex;
   flex-direction: column;
   padding: 10px 0 5px 0;

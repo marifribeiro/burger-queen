@@ -5,7 +5,7 @@ import OrderItem from '../OrderItem/index';
 import Burger from '../Burger/index';
 import Form from '../Form/index';
 
-function Order(props) {
+function OrderSection(props) {
 
   return (
     <div>
@@ -17,7 +17,7 @@ function Order(props) {
               return (
                 <OrderItem 
                   {...item}
-                  key={`order${item.id}`}
+                  key={`orderitem${item.id}`}
                   handleRemove={() => props.handleRemove(item)}
                   handleAdd={() => props.handleAdd(item, 'add')}
                   handleMinus={() => props.handleMinus(item, 'minus')}
@@ -56,4 +56,4 @@ function Order(props) {
   )
 }
 
-export default Order;
+export default OrderSection;

@@ -22,3 +22,9 @@
 .selected {
   background-color: #f0a878;
 }
+
+.item-extras{
+  margin: 5px;
+  box-sizing: border-box;
+  display: flex;
+}

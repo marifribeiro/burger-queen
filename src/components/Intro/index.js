@@ -2,7 +2,6 @@ import React from 'react';
 import './styles.css';
 
 import {
-  BrowserRouter as Router,
   Link
 } from "react-router-dom";
 
