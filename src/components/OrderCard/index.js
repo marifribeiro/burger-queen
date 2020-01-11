@@ -26,15 +26,14 @@ function OrderCard(props) {
         clearInterval(interval);
       }
       return () => clearInterval(interval)
-      //
     }
-  }, [active, counter, props.done, props.ordered])
+  }, [active, counter, props.condition, props.ordered])
 
   if(props.condition) {
     return (
     <div className='card-container card-text'>
       <div className='card-info'>
-        <span className='order-time'>{counter}</span>
+        <span className='order-time'>Pedido feito a {counter}</span>
         <span className='table-info'>Mesa: {props.table}</span>
         <span className='table-info'>Nome: {props.name}</span>
           {

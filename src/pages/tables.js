@@ -3,14 +3,17 @@ import React, { useState } from 'react';
 import Menu from '../components/Menu/index';
 import Navbar from '../components/Navbar/index';
 import OrderSection from '../components/OrderSection';
+import Alert from '../components/Alert';
 
 import db from '../utils/firebase';
 
 function Tables() {
 
-  const [order, setOrder] = useState([])
-  const [table, setTable] = useState([])
-  const [name, setName] = useState([])
+  const [order, setOrder] = useState([]);
+  const [table, setTable] = useState([]);
+  const [name, setName] = useState([]);
+  const [modal, setModal] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
 
   function selectItem(item) {
     if (item.type === 'regular' && order.filter(value => value.id === item.id).length === 0) {
@@ -45,34 +48,51 @@ function Tables() {
   }
 
   function sendOrder(order, name, table) {
-    db.collection("orders").add({
-      ordered: new Date().toLocaleString(),
-      total: order.reduce((acc, curr) => {
-        const extraPrice = curr.extra === undefined || curr.extra === "Não" ? 0 : 1;
-        return acc + ((curr.price + extraPrice) * curr.amount)
-        }, 0) + ",00",
-      order: order,
-      table: table,
-      name: name,
-    })
+    if (order.length === 0) {
+      setModal(true)
+      setAlertMessage('Adicione pelo menos um item ao pedido')
+    } else if (name.length === 0) {
+      setModal(true)
+      setAlertMessage('Insira o nome do cliente')
+    } else if (table.length === 0) {
+      setModal(true)
+      setAlertMessage('Insira o número da mesa')
+    } else {
+      db.collection("orders").add({
+        ordered: new Date().toLocaleString(),
+        total: order.reduce((acc, curr) => {
+          const extraPrice = curr.extra === undefined || curr.extra === "Não" ? 0 : 1;
+          return acc + ((curr.price + extraPrice) * curr.amount)
+          }, 0) + ",00",
+        order: order,
+        table: table,
+        name: name,
+      })
     setOrder([]);
     setTable('');
     setName('');
+    setModal(false);
+    }
+  }
+
+  function closeAlert() {
+    setModal(false)
   }
 
   return (
     <>
-      <Navbar />
+      {modal ? <Alert message={alertMessage} onClick={closeAlert} /> : null}
+      <Navbar tablesActive={'active'}/>
       <Menu onClick={selectItem} />
       <OrderSection
         item={order}
-        tableValue={table}
-        nameValue={name}
         handleRemove={removeItem}
         handleAdd={changeAmount}
         handleMinus={changeAmount}
         handleTable={setTable}
         handleName={setName}
+        tableValue={table}
+        nameValue={name}
         handleBurger={getOptions}
         handleExtra={getOptions}
         send={() => sendOrder(order, name, table)}

@@ -33,8 +33,8 @@ function Kitchen() {
   
   return (
     <>
-      <Navbar />
-      <div className='kitchen-container'>
+      <Navbar kitchenActive={'active'} />
+      <div className='grid-container'>
         { items.map(item => (
           <OrderCard 
             {...item} 
