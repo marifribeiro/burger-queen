@@ -29,7 +29,7 @@
   display: block;
 }
 
-.kitchen-order {
+.order-items {
   display: flex;
   flex-direction: column;
   padding: 10px 0 5px 0;

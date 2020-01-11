@@ -5,7 +5,7 @@ import pt from 'date-fns/locale/pt';
 
 import Button from '../Button/index.js'
 
-function KitchenCard(props) {
+function OrderCard(props) {
   const [counter, setCounter] = useState('...');
   const [active, setActive] = useState(true);
 
@@ -16,7 +16,7 @@ function KitchenCard(props) {
   }
 
   useEffect(() => {
-    if(!props.done) {
+    if(props.condition) {
       let interval = null;
       if(active) {
         interval = setInterval(() => {
@@ -30,7 +30,7 @@ function KitchenCard(props) {
     }
   }, [active, counter, props.done, props.ordered])
 
-  if(!props.done) {
+  if(props.condition) {
     return (
     <div className='card-container card-text'>
       <div className='card-info'>
@@ -39,14 +39,14 @@ function KitchenCard(props) {
         <span className='table-info'>Nome: {props.name}</span>
           {
             props.order.map(item => item.type === 'burger' ? (
-              <div className='kitchen-order' key={`kitchen${item.id}`}>
+              <div className='order-items' key={`kitchen${item.id}`}>
                 <span className='order-info'>{item.name}</span>
                 <span className='order-info'>Quantidade: {item.amount}</span>
                 <span className='order-info'>Hambúrger: {item.burger}</span>
                 <span className='order-info'>Extras: {item.extra}</span>
               </div>
               ) : (
-              <div className='kitchen-order' key={`kitchen${item.id}`}>
+              <div className='order-items' key={`kitchen${item.id}`}>
                 <span className='order-info'>{item.name}</span>
                 <span className='order-info'>Quantidade: {item.amount}</span>
               </div>
@@ -54,7 +54,7 @@ function KitchenCard(props) {
           }
       </div>
       <div className='kitchen-button'>
-       <Button onClick={stopTimer} label='Pedido pronto' />
+       <Button onClick={stopTimer} label={props.buttonLabel} />
       </div>
     </div>
     )
@@ -63,4 +63,4 @@ function KitchenCard(props) {
   }
 }
 
-export default KitchenCard;
+export default OrderCard;

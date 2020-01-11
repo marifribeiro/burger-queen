@@ -3,7 +3,7 @@ import db from '../../utils/firebase';
 import './styles.css';
 
 import Navbar from '../../components/Navbar';
-import KitchenCard from '../../components/KitchenCard';
+import OrderCard from '../../components/OrderCard';
 
 function useItems() {
   const [items, setItems] = useState([])
@@ -35,7 +35,15 @@ function Kitchen() {
     <>
       <Navbar />
       <div className='kitchen-container'>
-        { items.map(item => <KitchenCard {...item} key={item.id} onClick={() => orderReady(item.id)} />) }
+        { items.map(item => (
+          <OrderCard 
+            {...item} 
+            key={item.id} 
+            buttonLabel={'Pronto'} 
+            condition={!item.done} 
+            onClick={() => orderReady(item.id)} 
+          />
+        )) }
       </div>
     </>
   )

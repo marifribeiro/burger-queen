@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Menu from '../components/Menu/index';
 import Navbar from '../components/Navbar/index';
-import Order from '../components/Order';
+import OrderSection from '../components/OrderSection';
 
 import db from '../utils/firebase';
 
@@ -64,7 +64,7 @@ function Tables() {
     <>
       <Navbar />
       <Menu onClick={selectItem} />
-      <Order 
+      <OrderSection
         item={order}
         tableValue={table}
         nameValue={name}
