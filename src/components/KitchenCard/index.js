@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
+import formatDistanceStrict from 'date-fns/formatDistanceStrict';
+import pt from 'date-fns/locale/pt';
 
 import Button from '../Button/index.js'
 
 function KitchenCard(props) {
+  const [counter, setCounter] = useState('...');
+  const [active, setActive] = useState(true);
+
+  function stopTimer() {
+    setActive(false);
+    setCounter(0)
+    props.onClick();
+  }
+
+  useEffect(() => {
+    if(!props.done) {
+      let interval = null;
+      if(active) {
+        interval = setInterval(() => {
+          setCounter(formatDistanceStrict(new Date(props.ordered), new Date(), {locale: pt}));
+        }, 1000)
+      }else if (!active && counter !== 0) {
+        clearInterval(interval);
+      }
+      return () => clearInterval(interval)
+      //
+    }
+  }, [active, counter, props.done, props.ordered])
 
   if(!props.done) {
     return (
     <div className='card-container card-text'>
       <div className='card-info'>
-        <span className='order-time'>{new Date(props.ordered).toLocaleTimeString()}</span>
+        <span className='order-time'>{counter}</span>
         <span className='table-info'>Mesa: {props.table}</span>
         <span className='table-info'>Nome: {props.name}</span>
           {
@@ -29,7 +54,7 @@ function KitchenCard(props) {
           }
       </div>
       <div className='kitchen-button'>
-       <Button onClick={props.onClick} label='Pedido pronto' />
+       <Button onClick={stopTimer} label='Pedido pronto' />
       </div>
     </div>
     )

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './styles.css';
 
 import OrderItem from '../OrderItem/index';
@@ -27,7 +27,7 @@ function Order(props) {
               return (
                 <Burger 
                   {...item}
-                  key={`burger${item.id, index}`}
+                  key={`burger${item.id}${index}`}
                   handleRemove={() => props.handleRemove(item)}
                   handleAdd={() => props.handleAdd(item, 'add')}
                   handleMinus={() => props.handleMinus(item, 'minus')}

@@ -47,7 +47,6 @@ function Tables() {
   function sendOrder(order, name, table) {
     db.collection("orders").add({
       ordered: new Date().toLocaleString(),
-      table: 'table',
       total: order.reduce((acc, curr) => {
         const extraPrice = curr.extra === undefined || curr.extra === "Não" ? 0 : 1;
         return acc + ((curr.price + extraPrice) * curr.amount)

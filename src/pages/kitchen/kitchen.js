@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import db from '../../utils/firebase';
 import './styles.css';
+
 import Navbar from '../../components/Navbar';
 import KitchenCard from '../../components/KitchenCard';
 
@@ -22,14 +23,14 @@ function useItems() {
 }
 
 function Kitchen() {
+  const items = useItems()
 
   function orderReady(id) {
     db.collection("orders").doc(id).update({
       done: new Date().toLocaleString(),
     })
   }
-
-  const items = useItems()
+  
   return (
     <>
       <Navbar />
