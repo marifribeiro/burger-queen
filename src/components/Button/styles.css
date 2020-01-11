@@ -1,0 +1,11 @@
+.button {
+  background-color: #ED4248;
+  color: #FFF;
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 8px;
+  margin: 8px;
+  border: none;
+  border-radius: 5px;
+}

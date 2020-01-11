@@ -29,7 +29,6 @@ function Tables() {
   function changeAmount(item, operation) {
     if (operation === 'add') {
       var count = item.amount + 1;
-      console.log(item)
     } else if (operation === 'minus') {
       var count = item.amount >= 2 ? item.amount - 1 : 1;
     }
@@ -47,12 +46,14 @@ function Tables() {
 
   function sendOrder(order, name, table) {
     db.collection("orders").add({
-      timestamp: new Date(),
-      table: 'table',
-      total: order.reduce((acc, curr) => acc + (curr.price * curr.amount), 0) + ",00",
+      ordered: new Date().toLocaleString(),
+      total: order.reduce((acc, curr) => {
+        const extraPrice = curr.extra === undefined || curr.extra === "Não" ? 0 : 1;
+        return acc + ((curr.price + extraPrice) * curr.amount)
+        }, 0) + ",00",
       order: order,
       table: table,
-      name: name
+      name: name,
     })
     setOrder([]);
     setTable('');
@@ -60,11 +61,13 @@ function Tables() {
   }
 
   return (
-    <div className="tables">
+    <>
       <Navbar />
       <Menu onClick={selectItem} />
       <Order 
         item={order}
+        tableValue={table}
+        nameValue={name}
         handleRemove={removeItem}
         handleAdd={changeAmount}
         handleMinus={changeAmount}
@@ -74,7 +77,7 @@ function Tables() {
         handleExtra={getOptions}
         send={() => sendOrder(order, name, table)}
       />
-    </div>
+    </>
   )
 }
 

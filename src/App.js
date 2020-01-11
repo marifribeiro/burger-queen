@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import Kitchen from './pages/kitchen';
+import Kitchen from './pages/kitchen/kitchen';
 import Tables from './pages/tables';
 import Ready from './pages/ready';
 import Home from './pages/home';
