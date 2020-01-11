@@ -48,6 +48,7 @@
 .order-bottom {
   display: flex;
   justify-content: space-evenly;
+  margin: 0 0 30% 0;
 }
 
 .order-send {
