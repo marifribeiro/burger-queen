@@ -7,7 +7,7 @@ function OptionButton(props) {
   const deselectedClass = 'extra-button order-text burger';
 
    return (
-    <button onClick={props.onClick} className={props.selected ? selectedClass : deselectedClass}>{props.label}</button>
+    <button onClick={props.onClick} className={props.selected ? selectedClass : deselectedClass}>{props.children}</button>
    )
 }
 

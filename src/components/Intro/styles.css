@@ -18,7 +18,7 @@
 .intro-links {
   display: flex;
   justify-content: space-evenly;
-  width: 350px;
+  width: 400px;
 }
 
 .intro-links :hover {
@@ -28,8 +28,7 @@
 
 .link {
   background-color: #ED4248;
-  width: 100px;
-  height: 60px;
+  width: 120px;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -40,6 +39,8 @@
   padding: 15px;
   box-shadow: 4px 4px 5px 0px rgba(179,179,179,0.7);
   box-sizing: border-box;
+  border: none;
+  font-size: 1em;
 }
 
 .link a {

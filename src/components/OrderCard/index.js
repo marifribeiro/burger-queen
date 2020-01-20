@@ -53,7 +53,7 @@ function OrderCard(props) {
           }
       </div>
       <div className='kitchen-button'>
-       <Button onClick={stopTimer} label={props.buttonLabel} />
+       <Button onClick={stopTimer}>{props.buttonLabel}</Button>
       </div>
     </div>
     )

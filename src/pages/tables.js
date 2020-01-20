@@ -16,25 +16,24 @@ function Tables() {
   const [alertMessage, setAlertMessage] = useState('');
 
   function selectItem(item) {
-    if (item.type === 'regular' && order.filter(value => value.id === item.id).length === 0) {
-      setOrder([...order, {...item, amount: 1}]);
-    } else if (item.type === 'burger') {
+    if ((item.type === 'regular' && order.filter(value => value.id === item.id).length === 0) || item.type === 'burger') {
       setOrder([...order, {...item, amount: 1}]);
     }
   }
 
   function removeItem(item) {
-    const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id)
-    order.splice(itemIndex, 1)
-    setOrder([...order])
+    setOrder(order.filter(orderItem => orderItem.id !== item.id))
   }
   
   function changeAmount(item, operation) {
+    let count;
+
     if (operation === 'add') {
-      var count = item.amount + 1;
+      count = item.amount + 1;
     } else if (operation === 'minus') {
-      var count = item.amount >= 2 ? item.amount - 1 : 1;
+      count = item.amount >= 2 ? item.amount - 1 : 1;
     }
+
     const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id)
     order.splice(itemIndex, 1, {...item, amount: count})
     setOrder([...order]);

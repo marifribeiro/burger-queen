@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 
-function Home() {
+function Intro() {
   return (
     <div className="intro-container">
       <div className="intro-text">
@@ -14,18 +14,18 @@ function Home() {
         Qual seção quer visitar?
       </div>
       <div className="intro-links">
-        <span className='link'>
+        <button className='link'>
           <Link to="/mesas">Novo pedido</Link>
-        </span>
-        <span className='link'>
+        </button>
+        <button className='link'>
           <Link to="/cozinha">Cozinha</Link>
-        </span>
-        <span className='link'>
+        </button>
+        <button className='link'>
           <Link to="/prontos">Pedidos prontos</Link>
-        </span>
+        </button>
       </div>
     </div>
   )
 }
 
-export default Home;
+export default Intro;

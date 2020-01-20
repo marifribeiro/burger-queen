@@ -34,8 +34,8 @@ function Burger(props) {
         <button className='order-button order-remove order-text' onClick={props.handleRemove}></button>
       </div>
       <div className='item-extras'>
-        { burgerTypes.map((type) => <OptionButton key={type} label={type} onClick={()   => selectBurger(type)} selected={type === obj.burger} />) }
-        { extraTypes.map(type => <OptionButton key={type} label={type} onClick={() => selectExtra(type)} selected={type === obj.extra} />) }
+        { burgerTypes.map((type) => <OptionButton key={type} onClick={() => selectBurger(type)} selected={type === obj.burger}>{type}</OptionButton>) }
+        { extraTypes.map(type => <OptionButton key={type} onClick={() => selectExtra(type)} selected={type === obj.extra}>{type}</OptionButton>) }
       </div>
     </div>
   )
