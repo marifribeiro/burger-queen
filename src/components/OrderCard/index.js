@@ -20,9 +20,9 @@ function OrderCard(props) {
       let interval = null;
       if(active) {
         interval = setInterval(() => {
-          setCounter(formatDistanceStrict(new Date(props.ordered), new Date(), {locale: pt}));
+          setCounter(formatDistanceStrict(new Date(props.ordered).getTime(), new Date(), {locale: pt}));
         }, 1000)
-      }else if (!active && counter !== 0) {
+      } else if (!active && counter !== 0) {
         clearInterval(interval);
       }
       return () => clearInterval(interval)

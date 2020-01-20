@@ -59,7 +59,7 @@ function Tables() {
       setAlertMessage('Insira o número da mesa')
     } else {
       db.collection("orders").add({
-        ordered: new Date().toLocaleString(),
+        ordered: new Date().getTime(),
         total: order.reduce((acc, curr) => {
           const extraPrice = curr.extra === undefined || curr.extra === "Não" ? 0 : 1;
           return acc + ((curr.price + extraPrice) * curr.amount)
